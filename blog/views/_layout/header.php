@@ -27,7 +27,7 @@
     <?php endif; ?>
     <?php if ($this->isLoggedIn) : ?>
         <div id="logged-in-info">
-            <span>Hello, <b><?=htmlspecialchars($_SESSION['username'])?></b></span>
+            <span>Logged In as <b><?=htmlspecialchars($_SESSION['username'])?></b></span>
             <form method="post" action="<?=APP_ROOT?>/users/logout">
                 <input type="submit" value="Logout"/>
             </form>
