@@ -2,7 +2,7 @@
 
 class UsersModel extends BaseModel
 {
-    // TODO: your database access functions for the user register / login will come here ...
+    // your database access functions for the user register / login will come here ...
     public function login(string $username, string $password)
     {
         $statement = self::$db->prepare(

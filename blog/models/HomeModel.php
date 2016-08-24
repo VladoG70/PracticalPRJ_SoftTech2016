@@ -2,7 +2,7 @@
 
 class HomeModel extends BaseModel
 {
-    // TODO: your database access functions for the home page will come here ...
+    // your database access functions for the home page will come here ...
     function getLastPosts (int $maxCount = 5) : array
     {
         /*$query = self::$db->query("SELECT posts.id, title, content, date, full_name FROM posts
@@ -31,3 +31,5 @@ ORDER BY date DESC");*/
 
 
 } // End class HomeModel
+
+?>

@@ -2,7 +2,7 @@
 
 <h1><?= htmlspecialchars($this->title) ?></h1>
 
-<!-- TODO: login form will come here ... -->
+<!-- Login form will come here ... -->
 <form method="post">
     <div><label for="username">Username:</label></div>
     <input id="username" type="text" name="username" />

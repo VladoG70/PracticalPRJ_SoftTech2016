@@ -23,7 +23,7 @@ class PostsModel extends BaseModel
     {
         // Create post and put it in DB
         $statement = self::$db->prepare(
-            "INSERT INTO posts (title, content, user_id) VALUES ('$title', '$content', '$user_id')");
+            "INSERT INTO posts(title, content, user_id) VALUES (?,?,?)");
         $statement->bind_param("ssi", $title, $content, $user_id);
         $statement->execute();
         return $statement->affected_rows == 1;

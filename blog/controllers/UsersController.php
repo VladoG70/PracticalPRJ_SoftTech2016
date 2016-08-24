@@ -4,7 +4,7 @@ class UsersController extends BaseController
 {
     public function register()
     {
-		// TODO: your user registration functionality will come here ...
+		// your user registration functionality will come here ...
         if ($this->isPost){
             $username = $_POST['username'];
             if (strlen($username) < 2 || strlen($username) > 50){
@@ -18,20 +18,20 @@ class UsersController extends BaseController
             if (strlen($full_name) > 200){
                 $this->setValidationError("full_name","Invalid full name!");
             }
+            if ($this->formValid()){
+                $userId = $this->model->register($username,$password,$full_name);
+                if ($userId){
+                    $_SESSION['username'] = $username;
+                    $_SESSION['user_id'] = $userId;
+                    $this->addInfoMessage("Registration successful!");
+                    $this->redirect("posts");
+                }
+                else {
+                    $this->addErrorMessage("ERROR: User registration failed!");
+                }
+            }
         } // END IF isPOST
 
-        if ($this->formValid()){
-            $userId = $this->model->register($username,$password,$full_name);
-            if ($userId){
-                $_SESSION['username'] = $username;
-                $_SESSION['user_id'] = $userId;
-                $this->addInfoMessage("Registration successful!");
-                $this->redirect("posts");
-            }
-            else {
-                $this->addErrorMessage("ERROR: User registration failed!");
-            }
-        }
 
     }
 

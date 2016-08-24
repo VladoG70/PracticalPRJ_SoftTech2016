@@ -2,7 +2,7 @@
 <!-- Escapes special symbols-code VS html Injection -->
 <h1><?=htmlspecialchars($this->title)?></h1>
 
-<!-- TODO: display a single post here -->
+<!-- display a single post here -->
 
 <main id="posts">
     <article>
