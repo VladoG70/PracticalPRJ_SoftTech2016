@@ -2,6 +2,13 @@
 
 class UsersController extends BaseController
 {
+    public function index()
+    {
+        // mplement the logic for the home users page
+        $this->authorize();
+        $this->users = $this->model->getAll();
+    }
+
     public function register()
     {
 		// your user registration functionality will come here ...
@@ -18,6 +25,7 @@ class UsersController extends BaseController
             if (strlen($full_name) > 200){
                 $this->setValidationError("full_name","Invalid full name!");
             }
+            // VALIDATION - is form valid
             if ($this->formValid()){
                 $userId = $this->model->register($username,$password,$full_name);
                 if ($userId){
@@ -31,13 +39,11 @@ class UsersController extends BaseController
                 }
             }
         } // END IF isPOST
-
-
     }
 
     public function login()
     {
-		// TODO: your user login functionality will come here ...
+		// your user login functionality will come here ...
         if ($this->isPost){
             $username = $_POST['username'];
             $password = $_POST['password'];
@@ -56,7 +62,7 @@ class UsersController extends BaseController
 
     public function logout()
     {
-		// TODO: your user logout functionality will come here ...
+		// your user logout functionality will come here ...
         session_destroy();
         $this->addInfoMessage("Log Out successful!");
         $this->redirect("");

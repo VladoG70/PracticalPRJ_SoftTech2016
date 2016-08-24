@@ -3,14 +3,22 @@
 class HomeController extends BaseController
 {
     function index() {
-        // TODO: Load posts to be displayed here ...
+        // Load posts to be displayed here ...
         $lastPosts = $this -> model -> getLastPosts(5);
-        $this -> posts = array_slice($lastPosts,0,3);
+        $this -> posts = array_slice($lastPosts,0,5);
         $this -> sidebarPosts = $lastPosts;
     }
 	
 	function view($id) {
         // Load a post to be displayed here ...
-        $this->post = $this->model->getPostById($id);
+        // $this->post = $this->model->getPostById($id);
+        $post = $this->model->getPostById($id);
+        if (!$post){
+            $this->addErrorMessage("ERROR: Invalid post ID!");
+            $this->redirect('');
+        }
+        $this->post = $post;
     }
 }
+
+?>

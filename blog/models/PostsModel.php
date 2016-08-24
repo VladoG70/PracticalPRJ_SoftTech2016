@@ -29,7 +29,7 @@ class PostsModel extends BaseModel
         return $statement->affected_rows == 1;
     }
 
-    public function edit (int $id, string $title, string $content, string $date, int $user_id) : bool
+    public function edit (string $id, string $title, string $content, string $date, int $user_id) : bool
     {
         // Edit a post by given ID
         $statement = self::$db->prepare(

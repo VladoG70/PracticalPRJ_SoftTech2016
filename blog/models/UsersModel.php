@@ -29,4 +29,14 @@ class UsersModel extends BaseModel
         $user_id = self::$db->query("SELECT LAST_INSERT_ID()")->fetch_row()[0];
         return $user_id;
     }
+
+    public function getAll() : array
+    {
+        $statement = self::$db->query(
+            "SELECT * FROM users ORDER BY username");
+        return $statement->fetch_all(MYSQLI_ASSOC);
+    }
+
 }
+
+?>

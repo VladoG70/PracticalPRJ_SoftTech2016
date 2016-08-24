@@ -2,11 +2,11 @@
 
 <h1><?=htmlspecialchars($this->title)?></h1>
 
-<!-- TODO: display the posts here -->
+<!-- display the posts here -->
 
 <?php
-/*var_dump($this->posts);
-    */?>
+// var_dump($this->posts);
+    ?>
 
 <aside>
     <h2><u>Recent Posts</u></h2>

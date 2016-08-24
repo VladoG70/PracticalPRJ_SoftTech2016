@@ -2,7 +2,7 @@
 
 <h1><?= htmlspecialchars($this->title) ?></h1>
 
-<!-- TODO: register form will come here ... -->
+<!-- register form will come here ... -->
 
 <form method="post">
     <div><label for="username">Username:</label></div>
