@@ -80,7 +80,9 @@ class PostsController extends BaseController
 
     public function delete(int $id)
     {
-        // DELETE post by given ID
+        // If HTTP POST - DELETE post by given ID
+        //var_dump($id);
+        //die("PostController: $id");
         if ($this->isPost){
             if ($this->model->delete($id)){
                 $this->addInfoMessage("Post deleted!");
@@ -89,6 +91,8 @@ class PostsController extends BaseController
             }
             $this->redirect('posts');
         } else {
+            // If HTTP GET
+            // Show confirm delete FORM
             $post = $this->model->getById($id);
             if (!$post){
                 $this->addErrorMessage("ERROR: Post does not exist!");

@@ -2,7 +2,7 @@
 
 <h1>Are you shure you want to delete this post?</h1>
 
-<form>
+<form method="post">
     <div>Title:</div><input type="text" value="<?=
         htmlspecialchars($this->post['title'])?>" disabled />
     <div>Content:</div><textarea rows="10" disabled ><?=

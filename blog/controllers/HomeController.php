@@ -9,15 +9,14 @@ class HomeController extends BaseController
         $this -> sidebarPosts = $lastPosts;
     }
 	
-	function view(int $id) {
+	function view($id) {
         // Load a post to be displayed here ...
-        //$this->post = $this->model->getPostById($id);
-        $post = $this->model->getPostById($id);
-        if (!$post){
+        $this->post = $this->model->getPostById($id);
+        //$post = $this->model->getPostById($id);
+        if (!$this->post){
             $this->addErrorMessage("ERROR: Invalid post ID!");
             $this->redirect('');
         }
-        $this->post = $post;
     }
 }
 

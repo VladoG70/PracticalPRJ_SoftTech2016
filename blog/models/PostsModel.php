@@ -1,18 +1,20 @@
 <?php
 
-class PostsModel extends BaseModel
+class PostsModel extends HomeModel // Change from BaseModel -> HomeModel
 {
     public function getAll() : array
     {
         // Get all posts from DB ...
-        $statement = self::$db->query("SELECT * FROM posts ORDER BY date DESC");
+        $statement = self::$db->query(
+            "SELECT * FROM posts ORDER BY date DESC");
         return $statement->fetch_all(MYSQLI_ASSOC);
     }
 
     public function getById (int $id)
     {
         // Get particular post from DB by given ID
-        $statement = self::$db->prepare("SELECT * FROM posts WHERE id= ?");
+        $statement = self::$db->prepare(
+            "SELECT * FROM posts WHERE id= ?");
         $statement->bind_param("i",$id);
         $statement->execute();
         $result = $statement->get_result()->fetch_assoc();
@@ -44,10 +46,11 @@ class PostsModel extends BaseModel
     public function delete (int $id) : bool
     {
         // Delete a post by given ID
-        $statement = self::$db->prepare("DELETE FROM posts WHERE id = ?");
+        $statement = self::$db->prepare(
+            "DELETE FROM posts WHERE id = ?");
         $statement->bind_param("i",$id);
         $statement->execute();
-        return $statement->affected_rows ==1;
+        return $statement->affected_rows == 1;
     }
 } // End CLASS PostModel
 

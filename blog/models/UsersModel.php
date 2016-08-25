@@ -14,7 +14,7 @@ class UsersModel extends BaseModel
         //var_dump($result);
         //die("BEFORE return $result!");
         if (password_verify($password,$result['password_hash'])){
-            return $result['id'];
+            return $result['id']; // Have to RETURN integer !!!! - FIXED
         }
         return false;
     } // END func Login
