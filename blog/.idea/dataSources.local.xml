@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="MySQL - blog@localhost" uuid="63427c57-7d31-4ede-9829-15429246ef22">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+    <data-source name="MySQL - @localhost" uuid="6a35702e-c5d2-42fd-b7aa-bf27e62f199e">
+      <database-info product="MySQL" version="5.5.5-10.1.13-MariaDB" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
-      <introspection-scope>blog:</introspection-scope>
-      <resolve-scope>blog:</resolve-scope>
+      <introspection-scope>:</introspection-scope>
+      <resolve-scope>:</resolve-scope>
     </data-source>
   </component>
 </project>

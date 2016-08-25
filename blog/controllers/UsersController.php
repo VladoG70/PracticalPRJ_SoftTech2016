@@ -48,6 +48,9 @@ class UsersController extends BaseController
             $username = $_POST['username'];
             $password = $_POST['password'];
             $loggedUserId = $this->model->login($username,$password);
+
+            //var_dump($loggedUserId);
+            //die("PostController: $loggedUserId");
             if ($loggedUserId){
                 $_SESSION['username'] = $username;
                 $_SESSION['user_id'] = $loggedUserId;
@@ -68,3 +71,4 @@ class UsersController extends BaseController
         $this->redirect("");
     }
 }
+?>

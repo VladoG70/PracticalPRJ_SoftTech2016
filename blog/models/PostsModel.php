@@ -22,6 +22,8 @@ class PostsModel extends BaseModel
     public function create (string $title, string $content, int $user_id) : bool
     {
         // Create post and put it in DB
+        //var_dump($user_id);
+        //die("PostModel: $user_id");
         $statement = self::$db->prepare(
             "INSERT INTO posts(title, content, user_id) VALUES (?,?,?)");
         $statement->bind_param("ssi", $title, $content, $user_id);
@@ -48,3 +50,5 @@ class PostsModel extends BaseModel
         return $statement->affected_rows ==1;
     }
 } // End CLASS PostModel
+
+?>

@@ -26,6 +26,8 @@ class PostsController extends BaseController
             }
             if ($this->formValid()){
                 $userId = $_SESSION['user_id'];
+                //var_dump($userId);
+                //die("PostController: BEFORE func CREATE");
                 if ($this->model->create($title, $content, $userId)){
                     $this->addInfoMessage("Post created!");
                     $this->redirect("posts");
@@ -97,3 +99,4 @@ class PostsController extends BaseController
     }
 
 }
+?>

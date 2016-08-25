@@ -10,8 +10,11 @@ class UsersModel extends BaseModel
         $statement->bind_param("s",$username);
         $statement->execute();
         $result = $statement->get_result()->fetch_assoc();
+        //var_dump($statement);
+        //var_dump($result);
+        //die("BEFORE return $result!");
         if (password_verify($password,$result['password_hash'])){
-            return $result;
+            return $result['id'];
         }
         return false;
     } // END func Login

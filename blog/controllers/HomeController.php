@@ -9,9 +9,9 @@ class HomeController extends BaseController
         $this -> sidebarPosts = $lastPosts;
     }
 	
-	function view($id) {
+	function view(int $id) {
         // Load a post to be displayed here ...
-        // $this->post = $this->model->getPostById($id);
+        //$this->post = $this->model->getPostById($id);
         $post = $this->model->getPostById($id);
         if (!$post){
             $this->addErrorMessage("ERROR: Invalid post ID!");
