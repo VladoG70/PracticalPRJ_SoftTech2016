@@ -1,14 +1,16 @@
 <?php $this->title = 'Login'; ?>
 
-<h1><?= htmlspecialchars($this->title) ?></h1>
+<h1 class="login-title"><?= htmlspecialchars($this->title) ?></h1>
 
 <!-- Login form will come here ... -->
-<form method="post">
-    <div><label for="username">Username:</label></div>
-    <input id="username" type="text" name="username" />
-    <div><label for="password">Password:</label></div>
-    <input id="password" type="password" name="password" />
-    <div><input type="submit" value="Log In" />
-    <a href="<?=APP_ROOT?>/users/register/"><br><br>
-        [Go to Register]</a></div>
-</form>
+    <div class="user-login-block">
+        <form method="post">
+            <div><label class="title-form" for="username">Username:</label></div>
+            <input id="username" type="text" placeholder="Enter Username" name="username" />
+            <div><label class="title-form" for="password">Password:</label></div>
+            <input id="password" type="password" placeholder="Enter Password" name="password" />
+            <div><input class="form-submit" type="submit" value="Log In" />
+            <a class="form-link" href="<?=APP_ROOT?>/users/register/"><br><br>
+                [Go to Register]</a></div>
+        </form>
+    </div>

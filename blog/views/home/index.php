@@ -8,7 +8,7 @@
 // var_dump($this->posts);
     ?>
 
-<aside>
+<aside class="sidebar">
     <h2><u>Recent Posts</u></h2>
     <?php foreach ($this->sidebarPosts as $post) { ?>
         <a href="<?=APP_ROOT?>/home/view/<?=$post['id']?>">
