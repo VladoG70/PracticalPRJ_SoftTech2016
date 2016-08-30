@@ -1,15 +1,21 @@
 <?php $this->title = $this->post['title'] ?>
-<!-- Escapes special symbols-code VS html Injection -->
-<h1><?=htmlspecialchars($this->title)?></h1>
 
-<!-- display a single post here -->
+<!-- display a SINGLE post here -->
 
-<main id="posts">
-    <article>
-        <div class="date"><i>Posted on</i>
-            <?=(new DateTime($this->post['date']))->format('d-M-Y') ?>
-            <i>by</i> <?=htmlentities($this->post['full_name'])?>
-        </div>
-        <p class="content"><?=$this->post['content']?></p>
-    </article>
-</main>
+<div id="posts">
+    <header class="blog-title"></header>
+    <ul class="single-article">
+        <li class="single-post">
+            <article>
+                <div class="dot">&nbsp;</div>
+                    <!-- Escapes special symbols-code VS html Injection -->
+                    <h1 class="title"><?=htmlspecialchars($this->title)?></h1>
+                <div class="subtitle"><i>Posted on</i>
+                    <?=(new DateTime($this->post['date']))->format('d-M-Y') ?>
+                    <i>by</i> <?=htmlentities($this->post['full_name'])?>
+                </div>
+                <div class="content"><?=$this->post['content']?></div>
+            </article>
+        </li>
+    </ul>
+</div>

@@ -1,33 +1,39 @@
 <?php $this->title = 'Welcome to My Blog Practical Project  - Blog System, SoftTech\'2016!'; ?>
 
-<h1><?=htmlspecialchars($this->title)?></h1>
 
 <!-- display the posts here -->
 
 <?php
 // var_dump($this->posts);
-    ?>
+?>
 
 <aside class="sidebar">
-    <h2><u>Recent Posts</u></h2>
+    <h2 class="recent-posts-title"><u>Recent Posts</u></h2>
     <?php foreach ($this->sidebarPosts as $post) { ?>
-        <a href="<?=APP_ROOT?>/home/view/<?=$post['id']?>">
+        <a class="single-menu-element" href="<?=APP_ROOT?>/home/view/<?=$post['id']?>">
             <?= htmlentities($post['title']) ?>
         </a>
         <hr>
     <?php } ?>
 </aside>
 
-<main id="posts">
+<div id="posts">
+    <h1 class="blog-title-index"><?=htmlspecialchars($this->title)?></h1>
+
     <article>
+        <ul class="articles">
         <?php foreach ($this->posts as $post) {?>
-        <h2 class="title"><?=htmlentities($post['title']) ?></h2>
-            <div class="date"><i>Posted on</i>
-                <?=(new DateTime($post['date']))->format('d-M-Y') ?>
-                <i>by</i> <?=htmlentities($post['full_name'])?>
-            </div>
-            <p class="content"><?=$post['content']?></p>
+            <li class="single-post">
+                <div class="dot">&nbsp;</div>
+                <h2 class="title"><?=htmlentities($post['title'])?></h2>
+                <div class="subtitle"><i>Posted on</i>
+                    <?=(new DateTime($post['date']))->format('d-M-Y')?>
+                    <i>by</i> <?=htmlentities($post['full_name'])?>
+                </div>
+                <div class="content"><?=$post['content']?></div>
+            </li>
         <?php } ?>
+        </ul>
     </article>
-</main>
+</div>
 

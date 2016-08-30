@@ -1,8 +1,8 @@
 <?php $this->title = 'Users'; ?>
 
-<h1><?= htmlspecialchars($this->title) ?></h1>
+<h1 class="user-title"><?= htmlspecialchars($this->title) ?></h1>
 
-<table>
+<table align="center">
     <tr>
         <th>ID</th>
         <th>Username</th>

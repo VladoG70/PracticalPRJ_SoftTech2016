@@ -1,6 +1,6 @@
-<?php $this->title = 'Posts'; ?>
+<?php $this->title = 'All Posts'; ?>
 
-<h1><?=htmlspecialchars($this->title) ?></h1>
+<h1 class="post-title"><?=htmlspecialchars($this->title) ?></h1>
 
 <table>
     <tr>
@@ -26,4 +26,4 @@
 
 <br>
 <br>
-<a href="<?=APP_ROOT?>/posts/create">[Create NEW Post ...]</a>
+<a class="form-link" href="<?=APP_ROOT?>/posts/create">[Create NEW Post ...]</a>
