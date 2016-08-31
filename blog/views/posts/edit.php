@@ -19,13 +19,26 @@
                 </li>
                 <li class="single-element-form-titlepost-author">
                     <div class="title-form">Date (yyyy-MM-dd hh:mm:ss):</div>
-                    <input type="text" name="post_date" value="<?=
-                        htmlspecialchars($this->post['date'])?>" <?php if ($_SESSION['user_id'] != 9){ ?> disabled <?php } ?> />
+                    <?php if ($_SESSION['user_id'] == 9){ ?>
+                        <input type="text" name="post_date" value="<?=
+                            htmlspecialchars($this->post['date'])?>" />
+                    <?php } else { ?>
+                        <div class="disabled-field"> <?php echo htmlspecialchars($this->post['date']) ?> </div>
+                            <input type="hidden" name="post_date" value="<?=
+                                htmlspecialchars($this->post['date'])?>" />
+                    <?php } ?>
                 </li>
                 <li class="single-element-form-titlepost-author">
                     <div class="title-form">Author ID:</div>
-                    <input type="text" name="user_id" value="<?=
-                        htmlspecialchars($this->post['user_id'])?>" <?php if ($_SESSION['user_id'] != 9){ ?> disabled <?php } ?> />
+
+                    <?php if ($_SESSION['user_id'] == 9){ ?>
+                        <input type="text" name="user_id" value="<?=
+                            htmlspecialchars($this->post['user_id'])?>" />
+                    <?php } else { ?>
+                        <div class="disabled-field"> <?php echo htmlspecialchars($this->post['user_id'])?> </div>
+                        <input type="hidden" name="user_id" value="<?=
+                        htmlspecialchars($this->post['user_id'])?>" />
+                    <?php } ?>
                 </li>
                 <li class="single-element-form-titlepost-author">
                     <div class="title-form">Genuine Post's Author Name:</div>

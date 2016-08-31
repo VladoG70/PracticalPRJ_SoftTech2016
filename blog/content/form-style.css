@@ -62,6 +62,16 @@ input {
     text-align: center;
 }
 
+.disabled-field {
+    border-radius: 30px;
+    border: 3px solid #06C0AB;
+    width: 50%;
+    height: 25px;
+    margin: 0 auto 10px;
+    padding-top: 7px;
+    text-align: center;
+}
+
 input:focus {
     font: 12px Lato;
     font-weight: 100;
