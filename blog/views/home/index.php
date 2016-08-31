@@ -43,3 +43,4 @@
     </article>
 </div>
 
+<script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?u=Q4O9&d=ZMepne-cmB5bWyMCBMhouQwqDnNwiSZcvMUc8B6AOtc"></script>
