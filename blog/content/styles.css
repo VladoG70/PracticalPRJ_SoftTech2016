@@ -278,3 +278,8 @@ footer {
     bottom: 0;
     text-align: center;
 }
+
+.post-title-link:hover {
+    font-weight: bold;
+    color: #06C0AB;
+}

@@ -52,6 +52,18 @@ class PostsModel extends HomeModel // Change from BaseModel -> HomeModel
         $statement->execute();
         return $statement->affected_rows == 1;
     }
+
+    public function getUserById (int $id)
+    {
+        // Get particular post from DB by given ID
+        $statement = self::$db->prepare(
+            "SELECT * FROM users WHERE id= ?");
+        $statement->bind_param("i",$id);
+        $statement->execute();
+        $result = $statement->get_result()->fetch_assoc();
+        return $result;
+    }
+
 } // End CLASS PostModel
 
 ?>

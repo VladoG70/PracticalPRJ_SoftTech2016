@@ -79,8 +79,8 @@ input:focus {
 }
 
 .logout-butt:hover {
-    font: 13px Lato;
-    font-weight: 100;
+    /*font: 13px Lato;
+    font-weight: 100;*/
     /*outline: none;*/
     /*border: 3px solid #06C0AB;*/
     /*border: 3px solid #F2F2F2;*/

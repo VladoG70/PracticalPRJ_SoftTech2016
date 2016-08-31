@@ -2,6 +2,7 @@
 
 <h1 class="edit-post-title"><?=htmlspecialchars($this->title)?></h1>
 
+
 <div class="new-post-block">
     <h2 id="editor-title">Edit post</h2>
         <form id="post-form" method="post">
@@ -19,13 +20,18 @@
                 <li class="single-element-form-titlepost-author">
                     <div class="title-form">Date (yyyy-MM-dd hh:mm:ss):</div>
                     <input type="text" name="post_date" value="<?=
-                        htmlspecialchars($this->post['date'])?>" />
+                        htmlspecialchars($this->post['date'])?>" <?php if ($_SESSION['user_id'] != 9){ ?> disabled <?php } ?> />
                 </li>
                 <li class="single-element-form-titlepost-author">
                     <div class="title-form">Author ID:</div>
                     <input type="text" name="user_id" value="<?=
-                        htmlspecialchars($this->post['user_id'])?>" />
-                    </li>
+                        htmlspecialchars($this->post['user_id'])?>" <?php if ($_SESSION['user_id'] != 9){ ?> disabled <?php } ?> />
+                </li>
+                <li class="single-element-form-titlepost-author">
+                    <div class="title-form">Genuine Post's Author Name:</div>
+                    <input type="text" name="user_id" value="<?=
+                    htmlspecialchars($this->userAuth['full_name'])?>" disabled />
+                </li>
                 <li class="single-element-form-titlepost-author">
                     <input class="form-submit" type="submit" value="Edit" /> <br>
                         <a class="form-link" href="<?=APP_ROOT?>/posts">[Cancel]</a>

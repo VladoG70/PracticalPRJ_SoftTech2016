@@ -76,6 +76,9 @@ class PostsController extends BaseController
             $this->redirect('posts');
         }
         $this->post = $post;
+        // Get Post's Author Full Name
+        $userAuth = $this->model->getUserById($post['user_id']);
+        $this->userAuth = $userAuth;
     }
 
     public function delete(int $id)

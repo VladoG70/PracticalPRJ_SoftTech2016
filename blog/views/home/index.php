@@ -6,6 +6,7 @@
 <?php
 // var_dump($this->posts);
 ?>
+<!-- RIGHTbar - recent posts -->
 
 <aside class="sidebar">
     <h2 class="recent-posts-title"><u>Recent Posts</u></h2>
@@ -17,6 +18,8 @@
     <?php } ?>
 </aside>
 
+
+<!-- Display first posts -->
 <div id="posts">
     <h1 class="blog-title-index"><?=htmlspecialchars($this->title)?></h1>
 
@@ -25,14 +28,15 @@
         <?php foreach ($this->posts as $post) {?>
             <li class="single-post">
                 <div class="dot">&nbsp;</div>
-                <a href="<?=APP_ROOT?>/home/view/<?=$post['id']?>">
+                <a class="post-title-link" href="<?=APP_ROOT?>/home/view/<?=$post['id']?>">
                 <h2 class="title"><?=htmlentities($post['title'])?></h2>
                     </a>
                 <div class="subtitle"><i>Posted on</i>
                     <?=(new DateTime($post['date']))->format('d-M-Y')?>
                     <i>by</i> <?=htmlentities($post['full_name'])?>
                 </div>
-                <div class="content"><?=$post['content']?></div>
+                <div class="content"><?= cutLongText($post['content'],500) ?></div>
+                <!-- <div class="content"><?=$post['content']?></div> -->
             </li>
         <?php } ?>
         </ul>
